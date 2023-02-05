@@ -3,6 +3,7 @@ import Header from 'components/Header';
 import Hero from 'components/Hero';
 import Socmed from 'components/Socmed';
 import HomeProjects from 'components/HomeProjects';
+import Experiences from 'components/Experiences';
 
 export default function Home() {
 	return (
@@ -16,6 +17,7 @@ export default function Home() {
 			<Hero />
 			<Socmed />
 			<HomeProjects />
+			<Experiences />
 		</>
 	);
 }

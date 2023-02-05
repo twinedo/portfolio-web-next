@@ -1,4 +1,12 @@
-import { Box, Container, Flex, Stack, Text } from '@chakra-ui/react';
+import {
+	Box,
+	Button,
+	Container,
+	Divider,
+	Flex,
+	Stack,
+	Text,
+} from '@chakra-ui/react';
 import { IPost } from 'models/post_model';
 import { useEffect, useState } from 'react';
 import Slider from 'react-slick';
@@ -9,6 +17,8 @@ import lodash from 'lodash';
 import { getDataFromAPI } from 'services/handler/handlerAPI';
 import { IProject } from 'models/project_model';
 import Image from 'next/image';
+import { AiOutlineMobile } from 'react-icons/ai';
+import { TbWorld } from 'react-icons/tb';
 
 export default function HomeProjects() {
 	const [data, setData] = useState<Array<IPost>>([]);
@@ -134,13 +144,14 @@ export default function HomeProjects() {
 						<Box overflow='hidden' w='100%'>
 							<Slider {...settings}>
 								{dataListMobile.map((o: IProject, i: number) => (
-									<Box key={o.key} p='10px'>
+									<Box key={o.key} px='10px' py='20px'>
 										<Stack
-											spacing={10}
-											borderRadius={15}
+											spacing={3}
+											borderRadius={8}
 											bg='#1e3f66'
+											cursor='pointer'
 											_hover={{
-												boxShadow: 'rgba(255, 255, 255, 0.8) 0px 8px 24px',
+												boxShadow: 'rgba(255, 255, 255, 0.8) 0px 2px 8px 0px',
 											}}
 										>
 											<Box width='100%' height='100px'>
@@ -157,13 +168,62 @@ export default function HomeProjects() {
 														width: '100%',
 														height: '100%',
 														overflow: 'hidden',
-														borderTopRightRadius: 15,
-														borderTopLeftRadius: 15,
+														borderTopRightRadius: 8,
+														borderTopLeftRadius: 8,
 													}}
 													// fill
 												/>
 											</Box>
-											<Text color='white'>{o.name}</Text>
+											<Box pt='5px' pb='10px' px='10px'>
+												<Stack spacing='2'>
+													<Flex
+														flexDirection='row'
+														align='center'
+														justify='space-between'
+													>
+														<Flex flex='1'>
+															<Text
+																color='white'
+																fontWeight='semibold'
+																noOfLines={2}
+															>
+																{o.name}
+															</Text>
+														</Flex>
+														{o.platform === 'mobile' ? (
+															<AiOutlineMobile color='white' />
+														) : (
+															<TbWorld color='white' />
+														)}
+													</Flex>
+													<Divider width='100%' bg='white' />
+													<Stack
+														direction='row'
+														justifyContent='space-between'
+														alignItems='center'
+													>
+														<Text
+															color='white'
+															fontSize={12}
+															textAlign='center'
+														>
+															{o.year}
+														</Text>
+														<Text
+															color='white'
+															border='1px solid white'
+															borderRadius={15}
+															py='5px'
+															px='20px'
+															fontSize={12}
+															textAlign='center'
+															_hover={{ bg: 'white', color: 'black' }}
+														>
+															Detail
+														</Text>
+													</Stack>
+												</Stack>
+											</Box>
 										</Stack>
 									</Box>
 								))}

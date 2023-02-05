@@ -8,7 +8,7 @@ export interface IProject {
 	link_playstore: string;
 	link_website: string;
 	name: string;
-	platform: string;
+	platform: 'mobile' | 'website';
 	tag: string;
 	year: number;
 }

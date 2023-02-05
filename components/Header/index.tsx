@@ -31,7 +31,7 @@ export default function Header() {
 							twinedo.dev
 						</Text>
 					</Stack>
-					<Stack direction='row' spacing={20}>
+					<Stack direction='row' spacing={10}>
 						<Text fontWeight='bold'>Home</Text>
 						<Text fontWeight='bold'>Projects</Text>
 						<Text fontWeight='bold'>CV</Text>
