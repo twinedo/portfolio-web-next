@@ -1,7 +1,23 @@
-import { Avatar, Box, Container, Flex, Stack, Text } from '@chakra-ui/react';
+import {
+	Avatar,
+	Box,
+	Button,
+	Container,
+	Flex,
+	Stack,
+	Text,
+	useDisclosure,
+} from '@chakra-ui/react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { useRef } from 'react';
+import { FiMenu } from 'react-icons/fi';
 
 export default function Header() {
+	const router = useRouter();
+	const path = router.pathname;
+	const { isOpen, onOpen, onClose } = useDisclosure();
+	const btnRef = useRef();
 	const redirects = [
 		{
 			id: '1',
@@ -57,15 +73,31 @@ export default function Header() {
 							</Text>
 						</Stack>
 					</Link>
-					<Stack direction='row' spacing={10}>
+					<Stack
+						direction='row'
+						spacing={10}
+						display={['none', 'none', 'flex']}
+					>
 						{redirects.map((o: { id: string; text: string; url: string }) => (
 							<Link href={o.url} key={o.id}>
-								<Text fontWeight='bold' cursor='pointer'>
+								<Text
+									fontWeight='bold'
+									cursor='pointer'
+									opacity={path === o.url ? 1 : 0.5}
+								>
 									{o.text}
 								</Text>
 							</Link>
 						))}
 					</Stack>
+					<Button
+						cursor='pointer'
+						display={['flex', 'flex', 'none']}
+						ref={btnRef}
+						onClick={onOpen}
+					>
+						<FiMenu color='black' size={30} />
+					</Button>
 				</Flex>
 			</Container>
 		</Box>
