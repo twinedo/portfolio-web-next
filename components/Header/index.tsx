@@ -3,6 +3,12 @@ import {
 	Box,
 	Button,
 	Container,
+	Drawer,
+	DrawerBody,
+	DrawerCloseButton,
+	DrawerContent,
+	DrawerHeader,
+	DrawerOverlay,
 	Flex,
 	Stack,
 	Text,
@@ -93,11 +99,42 @@ export default function Header() {
 					<Button
 						cursor='pointer'
 						display={['flex', 'flex', 'none']}
-						ref={btnRef}
+						ref={btnRef.current}
 						onClick={onOpen}
 					>
 						<FiMenu color='black' size={30} />
 					</Button>
+					<Drawer
+						isOpen={isOpen}
+						placement='right'
+						onClose={onClose}
+						finalFocusRef={btnRef.current}
+					>
+						<DrawerOverlay />
+						<DrawerContent>
+							<DrawerCloseButton />
+							<DrawerHeader>Menu</DrawerHeader>
+
+							<DrawerBody>
+								<Stack spacing={10} height='100%' justify='center'>
+									{redirects.map(
+										(o: { id: string; text: string; url: string }) => (
+											<Link href={o.url} key={o.id}>
+												<Text
+													fontWeight='bold'
+													cursor='pointer'
+													opacity={path === o.url ? 1 : 0.5}
+													onClick={onClose}
+												>
+													{o.text}
+												</Text>
+											</Link>
+										)
+									)}
+								</Stack>
+							</DrawerBody>
+						</DrawerContent>
+					</Drawer>
 				</Flex>
 			</Container>
 		</Box>
