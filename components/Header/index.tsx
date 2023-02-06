@@ -1,6 +1,25 @@
 import { Avatar, Box, Container, Flex, Stack, Text } from '@chakra-ui/react';
+import Link from 'next/link';
 
 export default function Header() {
+	const redirects = [
+		{
+			id: '1',
+			text: 'Home',
+			url: '/',
+		},
+		{
+			id: '2',
+			text: 'Projects',
+			url: '/projects',
+		},
+		{
+			id: '3',
+			text: 'CV',
+			url: '/cv',
+		},
+	];
+
 	return (
 		<Box
 			id='boxx'
@@ -19,22 +38,33 @@ export default function Header() {
 					align='center'
 					py='20px'
 				>
-					<Stack direction='row' spacing={15} alignItems='center'>
-						<Avatar
-							width='50px'
-							borderRadius='50%'
-							name='Dan Abrahmov'
-							src='https://bit.ly/dan-abramov'
-						/>
+					<Link href='/'>
+						<Stack
+							direction='row'
+							spacing={15}
+							alignItems='center'
+							cursor='pointer'
+						>
+							<Avatar
+								width='50px'
+								borderRadius='50%'
+								name='Dan Abrahmov'
+								src='/img/profile.jpg'
+							/>
 
-						<Text fontWeight='bold' fontSize={20}>
-							twinedo.dev
-						</Text>
-					</Stack>
+							<Text fontWeight='bold' fontSize={20}>
+								twinedo.dev
+							</Text>
+						</Stack>
+					</Link>
 					<Stack direction='row' spacing={10}>
-						<Text fontWeight='bold'>Home</Text>
-						<Text fontWeight='bold'>Projects</Text>
-						<Text fontWeight='bold'>CV</Text>
+						{redirects.map((o: { id: string; text: string; url: string }) => (
+							<Link href={o.url} key={o.id}>
+								<Text fontWeight='bold' cursor='pointer'>
+									{o.text}
+								</Text>
+							</Link>
+						))}
 					</Stack>
 				</Flex>
 			</Container>

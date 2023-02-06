@@ -287,3 +287,19 @@
 	font-family: 'Poppins', sans-serif;
 	font-weight: 400;
 }
+
+.compRunning {
+	width: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	animation: running-animation 5s linear infinite;
+}
+
+@keyframes running-animation {
+	from {
+		transform: translateX(100%);
+	}
+	to {
+		transform: translateX(-100%);
+	}
+}

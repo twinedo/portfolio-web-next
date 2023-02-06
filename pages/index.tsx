@@ -4,6 +4,9 @@ import Hero from 'components/Hero';
 import Socmed from 'components/Socmed';
 import HomeProjects from 'components/HomeProjects';
 import Experiences from 'components/Experiences';
+import Stacks from 'components/Stacks';
+import Gotop from 'components/Gotop';
+import Footer from 'components/Footer';
 
 export default function Home() {
 	return (
@@ -18,6 +21,9 @@ export default function Home() {
 			<Socmed />
 			<HomeProjects />
 			<Experiences />
+			<Stacks />
+			<Gotop />
+			<Footer />
 		</>
 	);
 }

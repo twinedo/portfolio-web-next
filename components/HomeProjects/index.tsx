@@ -123,7 +123,7 @@ export default function HomeProjects() {
 								</Text>
 								<Box h='3px' w='45px' bg='white' />
 							</Stack>
-							<Link href='#'>
+							<Link href='/projects'>
 								<Stack
 									direction='row'
 									align='center'

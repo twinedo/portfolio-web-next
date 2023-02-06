@@ -23,7 +23,7 @@ export default function Experiences() {
 							<Box h='3px' w='45px' bg='black' />
 						</Stack>
 
-						<Stack>
+						<Stack position='relative'>
 							<Stack direction='row' spacing='5'>
 								<Flex flex={1}>
 									<Text>Jan 2022 - Currently</Text>
@@ -39,7 +39,12 @@ export default function Experiences() {
 									</Box>
 								</Flex>
 							</Stack>
-							<Stack direction='row' spacing='5' opacity={0.5}>
+							<Stack
+								direction='row'
+								spacing='5'
+								opacity={0.5}
+								position='relative'
+							>
 								<Flex flex={1}>
 									<Text>Mar 2021 - Des 2021</Text>
 								</Flex>
@@ -59,8 +64,8 @@ export default function Experiences() {
 								columnGap={5}
 								alignItems='center'
 								justifyContent='center'
-								position='absolute'
-								bottom='10px'
+								// position='absolute'
+								// bottom='0px'
 								// width='100%'
 								maxWidth='4xl'
 								bg='rgba(255, 255, 255, 0.9)'
