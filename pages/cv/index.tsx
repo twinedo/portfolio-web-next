@@ -1,8 +1,8 @@
+import CVPage from 'components/CVPage';
 import Header from 'components/Header';
-import ProjectList from 'components/ProjectList';
 import Head from 'next/head';
 
-export default function Projects() {
+export default function CV() {
 	return (
 		<>
 			<Head>
@@ -11,7 +11,7 @@ export default function Projects() {
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 			<Header />
-			<ProjectList />
+			<CVPage />
 		</>
 	);
 }

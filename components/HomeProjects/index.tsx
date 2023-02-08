@@ -21,64 +21,8 @@ import { AiOutlineMobile } from 'react-icons/ai';
 import { TbWorld } from 'react-icons/tb';
 
 export default function HomeProjects() {
-	const [data, setData] = useState<Array<IPost>>([]);
-
-	const settings = {
-		dots: true,
-		infinite: data.length > 3,
-		arrows: false,
-		autoplay: true,
-		speed: 500,
-		slidesToShow: 3,
-		slidesToScroll: 1,
-	};
-
-	useEffect(() => {
-		fetch('https://jsonplaceholder.typicode.com/posts')
-			.then((response) => response.json())
-			.then((json: Array<IPost>) => {
-				setData(json);
-			});
-	}, []);
-
-	const listMobile = [
-		{
-			id: 1,
-			text: 'Android Native',
-			isClicked: false,
-			code: 'n',
-			platform: 'mobile',
-		},
-		{
-			id: 2,
-			text: 'React Native',
-			isClicked: false,
-			code: 'rn',
-			platform: 'mobile',
-		},
-		{
-			id: 3,
-			text: 'Flutter',
-			isClicked: false,
-			code: 'f',
-			platform: 'mobile',
-		},
-		{
-			id: 4,
-			text: 'Ionic',
-			isClicked: false,
-			code: 'i',
-			platform: 'mobile',
-		},
-	];
-
 	const [loading, setLoading] = useState(true);
-
-	const [listMobileApp, setListMobileApp] = useState(listMobile);
-
 	const [dataListMobile, setDataListMobile] = useState<Array<IProject>>([]);
-	const [filteredListMobile, setFilteredListMobile] =
-		useState<Array<IProject>>(dataListMobile);
 
 	useEffect(() => {
 		setLoading(true);
@@ -90,16 +34,25 @@ export default function HomeProjects() {
 			const slice5 = sortYear.slice(0, 4);
 
 			setDataListMobile(slice5);
-			setFilteredListMobile(sortYear);
 		});
 		setTimeout(() => {
 			setLoading(false);
 		}, 2000);
 		return () => {
 			console.log('');
-			// setLoading(false);
+			setLoading(false);
 		};
 	}, []);
+
+	const settings = {
+		dots: true,
+		infinite: dataListMobile.length > 3,
+		arrows: false,
+		autoplay: true,
+		speed: 500,
+		slidesToShow: 3,
+		slidesToScroll: 1,
+	};
 
 	return (
 		<Box bg='#192841'>
