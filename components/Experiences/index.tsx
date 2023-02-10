@@ -8,6 +8,8 @@ import {
 	Text,
 } from '@chakra-ui/react';
 import Section from 'components/Section';
+import Timeline from 'components/Timeline';
+import { generateRandomLightColor } from 'services/utils/fun';
 import styles from 'styles/Home.module.css';
 
 export default function Experiences() {
@@ -24,41 +26,36 @@ export default function Experiences() {
 						</Stack>
 
 						<Stack position='relative'>
-							<Stack direction='row' spacing='5'>
-								<Flex flex={1}>
-									<Text>Jan 2022 - Currently</Text>
-								</Flex>
-								<Flex flex={4}>
-									<Box borderLeft='2px solid grey' pl='30px'>
-										<Box p='20px' borderRadius={20} bg='lightpink'>
-											<Text fontWeight='bold'>
-												DigitSense Ltd - Mobile Developer
-											</Text>
-											<Text>Description</Text>
-										</Box>
-									</Box>
-								</Flex>
-							</Stack>
-							<Stack
-								direction='row'
-								spacing='5'
-								opacity={0.5}
-								position='relative'
+							<Timeline
+								dateText='Jan 2022 - Current'
+								bgCard={generateRandomLightColor()}
 							>
-								<Flex flex={1}>
-									<Text>Mar 2021 - Des 2021</Text>
-								</Flex>
-								<Flex flex={4}>
-									<Box borderLeft='2px solid grey' pl='30px'>
-										<Box p='20px' borderRadius={20} bg='lightblue'>
-											<Text fontWeight='bold'>
-												PT Trucking Lintas Sarana - Mobile Developer
-											</Text>
-											<Text>Description</Text>
-										</Box>
-									</Box>
-								</Flex>
-							</Stack>
+								<Text fontWeight='bold'>DigitSense Ltd - Mobile Developer</Text>
+								<Text>
+									- Build web app Cointelegraph
+									<br /> - Build web app Neuropix
+									<br /> - Build mobile app Myrlabs
+								</Text>
+							</Timeline>
+							<Timeline
+								dateText='Mar 2021 - Des 2021'
+								bgCard={generateRandomLightColor()}
+								containerProps={{ opacity: 0.5, position: 'relative' }}
+							>
+								<Text fontWeight='bold'>
+									PT Trucking Lintas Sarana - Mobile Developer
+								</Text>
+								<Text>
+									- Build TruckkingDriver app to track and monitoring status
+									update when driver delivering the package (version 2).
+									<br />- Build Vendor Management System web based.
+									<br />- Pair Programmer to build Truckking web based
+									application.
+									<br />- Helping Operation how to operate application,
+									collecting bug report from user, fix bug.
+								</Text>
+							</Timeline>
+
 							<Flex
 								direction='row'
 								columnGap={5}
