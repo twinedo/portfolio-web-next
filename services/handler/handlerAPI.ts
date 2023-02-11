@@ -1,4 +1,4 @@
-import { onValue, push, ref } from 'firebase/database';
+import { child, get, onValue, push, ref } from 'firebase/database';
 import { getDownloadURL, listAll, ref as storageReff } from 'firebase/storage';
 import app, { auth, signIn, database, storage } from '../firebase';
 
@@ -54,29 +54,27 @@ export const getDataFromAPI = (platform: string) => {
 
 			resolve(newArr);
 		});
-		// database.getDatabase(ref(platform + '/')).on('value', (snapshot) => {
-		// 	const data = snapshot.val();
-		// 	console.log('dataget', data);
-		// 	const newArr = [];
-		// 	Object.keys(data).map((key) => {
-		// 		return newArr.push({
-		// 			key,
-		// 			bucket: snapshot.val()[key].bucket,
-		// 			tag: snapshot.val()[key].tag,
-		// 			description: snapshot.val()[key].description,
-		// 			display: snapshot.val()[key].display,
-		// 			id: snapshot.val()[key].id,
-		// 			name: snapshot.val()[key].name,
-		// 			platform: snapshot.val()[key].platform,
-		// 			year: snapshot.val()[key].year,
-		// 			link_appstore: snapshot.val()[key].link_appstore,
-		// 			link_playstore: snapshot.val()[key].link_playstore,
-		// 			link_website: snapshot.val()[key].link_website,
-		// 		});
-		// 	});
+	});
+};
 
-		// 	resolve(newArr);
-		// });
+export const getDetailProjectbyKey = async (
+	platform: 'mobile' | 'website' | string,
+	key: string
+) => {
+	const dbRef = ref(database.getDatabase());
+	return new Promise((resolve, reject) => {
+		get(child(dbRef, `${platform}/${key}`))
+			.then((snapshot) => {
+				if (snapshot.exists()) {
+					resolve(snapshot.val());
+				} else {
+					reject('No data available');
+				}
+			})
+			.catch((error) => {
+				console.error(error);
+				reject(JSON.stringify(error));
+			});
 	});
 };
 

@@ -1,3 +1,4 @@
+import Footer from 'components/Footer';
 import Header from 'components/Header';
 import ProjectList from 'components/ProjectList';
 import Head from 'next/head';
@@ -12,6 +13,7 @@ export default function Projects() {
 			</Head>
 			<Header />
 			<ProjectList />
+			<Footer />
 		</>
 	);
 }

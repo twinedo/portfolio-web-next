@@ -1,4 +1,5 @@
 import CVPage from 'components/CVPage';
+import Footer from 'components/Footer';
 import Header from 'components/Header';
 import Head from 'next/head';
 
@@ -12,6 +13,7 @@ export default function CV() {
 			</Head>
 			<Header />
 			<CVPage />
+			<Footer />
 		</>
 	);
 }

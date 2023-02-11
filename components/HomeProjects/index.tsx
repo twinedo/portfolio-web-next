@@ -162,18 +162,26 @@ export default function HomeProjects() {
 														>
 															{o.year}
 														</Text>
-														<Text
-															color='white'
-															border='1px solid white'
-															borderRadius={15}
-															py='5px'
-															px='20px'
-															fontSize={12}
-															textAlign='center'
-															_hover={{ bg: 'white', color: 'black' }}
+														<Link
+															href={{
+																pathname: `projects/${o.key}`,
+																query: { platform: o.platform },
+															}}
+															passHref
 														>
-															Detail
-														</Text>
+															<Text
+																color='white'
+																border='1px solid white'
+																borderRadius={15}
+																py='5px'
+																px='20px'
+																fontSize={12}
+																textAlign='center'
+																_hover={{ bg: 'white', color: 'black' }}
+															>
+																Detail
+															</Text>
+														</Link>
 													</Stack>
 												</Stack>
 											</Box>

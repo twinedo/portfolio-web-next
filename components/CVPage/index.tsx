@@ -37,7 +37,7 @@ export default function CVPage() {
 				</Container>
 				<Container maxWidth='4xl' mt='30px'>
 					<Stack spacing='5'>
-						<Stack direction='row' spacing='4' align='center'>
+						<Stack direction='row' spacing='4' align='center' id='experiences'>
 							<Text fontWeight='bold' fontSize='16px' letterSpacing='3px'>
 								EXPERIENCES
 							</Text>

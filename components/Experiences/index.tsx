@@ -9,6 +9,7 @@ import {
 } from '@chakra-ui/react';
 import Section from 'components/Section';
 import Timeline from 'components/Timeline';
+import Link from 'next/link';
 import { generateRandomLightColor } from 'services/utils/fun';
 import styles from 'styles/Home.module.css';
 
@@ -61,27 +62,30 @@ export default function Experiences() {
 								columnGap={5}
 								alignItems='center'
 								justifyContent='center'
-								// position='absolute'
-								// bottom='0px'
-								// width='100%'
 								maxWidth='4xl'
 								bg='rgba(255, 255, 255, 0.9)'
 								py='20px'
 							>
-								<Button
-									bg='black'
-									px='20px'
-									py='10px'
-									borderRadius={8}
-									cursor='pointer'
-									_hover={{
-										boxShadow: 'rgb(38, 57, 77) 0px 20px 30px -10px',
-									}}
-								>
-									<Text className={styles.textBody} fontSize={12} color='white'>
-										View More
-									</Text>
-								</Button>
+								<Link href='/cv#experiences'>
+									<Button
+										bg='black'
+										px='20px'
+										py='10px'
+										borderRadius={8}
+										cursor='pointer'
+										_hover={{
+											boxShadow: 'rgb(38, 57, 77) 0px 20px 30px -10px',
+										}}
+									>
+										<Text
+											className={styles.textBody}
+											fontSize={12}
+											color='white'
+										>
+											View More
+										</Text>
+									</Button>
+								</Link>
 							</Flex>
 						</Stack>
 					</Stack>

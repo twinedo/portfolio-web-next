@@ -14,8 +14,11 @@ import { TbWorld } from 'react-icons/tb';
 import { IProject } from 'models/project_model';
 import { getDataFromAPI } from 'services/handler/handlerAPI';
 import lodash from 'lodash';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 export default function ProjectList() {
+	const router = useRouter();
 	const [selectedTab, setSelectedTab] = useState<'mobile' | 'website'>(
 		'mobile'
 	);
@@ -44,8 +47,16 @@ export default function ProjectList() {
 		};
 	}, [selectedTab]);
 
+	function _onDetail(platform: string, key: string) {
+		router.push({
+			pathname: 'projects/' + key,
+			query: platform,
+		});
+	}
+
 	return (
-		<Box bgGradient='linear(to-br,rgba(1, 65, 255, 0),rgba(1, 65, 255, 0),rgba(1, 65, 255, 0.3))'>
+		// <Box bgGradient='linear(to-br,rgba(1, 65, 255, 0),rgba(1, 65, 255, 0),rgba(1, 65, 255, 0.3))'>
+		<Box>
 			<Section>
 				<Container maxW='4xl'>
 					<Box mt='2rem'>
@@ -197,18 +208,27 @@ export default function ProjectList() {
 															>
 																{o.year}
 															</Text>
-															<Text
-																color='white'
-																border='1px solid white'
-																borderRadius={15}
-																py='5px'
-																px='20px'
-																fontSize={12}
-																textAlign='center'
-																_hover={{ bg: 'white', color: 'black' }}
+															<Link
+																href={{
+																	pathname: `projects/${o.key}`,
+																	query: { platform: o.platform },
+																}}
+																passHref
 															>
-																Detail
-															</Text>
+																<Text
+																	color='white'
+																	border='1px solid white'
+																	borderRadius={15}
+																	py='5px'
+																	px='20px'
+																	fontSize={12}
+																	textAlign='center'
+																	_hover={{ bg: 'white', color: 'black' }}
+																	// onClick={() => _onDetail(o.platform, o.key)}
+																>
+																	Detail
+																</Text>
+															</Link>
 														</Stack>
 													</Stack>
 												</Box>

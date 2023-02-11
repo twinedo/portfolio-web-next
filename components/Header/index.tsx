@@ -22,6 +22,7 @@ import { FiMenu } from 'react-icons/fi';
 export default function Header() {
 	const router = useRouter();
 	const path = router.pathname;
+	console.log('router', router);
 	const { isOpen, onOpen, onClose } = useDisclosure();
 	const btnRef = useRef();
 	const redirects = [
@@ -42,6 +43,12 @@ export default function Header() {
 		},
 	];
 
+	function _RemoveFirstTxt(txt: string) {
+		const result = txt.slice(1);
+		console.log('resul', result);
+		return result;
+	}
+
 	return (
 		<Box
 			id='boxx'
@@ -58,7 +65,7 @@ export default function Header() {
 					flexDirection='row'
 					justifyContent='space-between'
 					align='center'
-					py='20px'
+					py='10px'
 				>
 					<Link href='/'>
 						<Stack
@@ -84,17 +91,27 @@ export default function Header() {
 						spacing={10}
 						display={['none', 'none', 'flex']}
 					>
-						{redirects.map((o: { id: string; text: string; url: string }) => (
-							<Link href={o.url} key={o.id}>
-								<Text
-									fontWeight='bold'
-									cursor='pointer'
-									opacity={path === o.url ? 1 : 0.5}
-								>
-									{o.text}
-								</Text>
-							</Link>
-						))}
+						{redirects.map(
+							(o: { id: string; text: string; url: string }, i: number) => (
+								<Link href={o.url} key={o.id}>
+									<Text
+										fontWeight='bold'
+										cursor='pointer'
+										opacity={
+											path === '/' && i === 0
+												? 1
+												: path.includes('projects') && i === 1
+												? 1
+												: path === o.url
+												? 1
+												: 0.5
+										}
+									>
+										{o.text}
+									</Text>
+								</Link>
+							)
+						)}
 					</Stack>
 					<Button
 						cursor='pointer'
@@ -118,12 +135,23 @@ export default function Header() {
 							<DrawerBody>
 								<Stack spacing={10} height='100%' justify='center'>
 									{redirects.map(
-										(o: { id: string; text: string; url: string }) => (
+										(
+											o: { id: string; text: string; url: string },
+											i: number
+										) => (
 											<Link href={o.url} key={o.id}>
 												<Text
 													fontWeight='bold'
 													cursor='pointer'
-													opacity={path === o.url ? 1 : 0.5}
+													opacity={
+														path === '/' && i === 0
+															? 1
+															: path.includes('projects') && i === 1
+															? 1
+															: path === o.url
+															? 1
+															: 0.5
+													}
 													onClick={onClose}
 												>
 													{o.text}
