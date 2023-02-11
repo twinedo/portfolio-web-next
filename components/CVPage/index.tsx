@@ -22,11 +22,11 @@ export default function CVPage() {
 			<Section>
 				<Container maxWidth='4xl'>
 					<Flex
-						flexDirection='row'
+						flexDirection={['column', 'row']}
 						justifyContent='space-between'
-						alignItems='center'
+						alignItems={['flex-start', 'center']}
 					>
-						<Text fontWeight='bold' fontSize={48}>
+						<Text fontWeight='bold' fontSize={[24, 36, 48]}>
 							Curriculum Vitae
 						</Text>
 						<Button variant='outline' onClick={onDownloadClick}>

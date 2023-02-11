@@ -59,14 +59,13 @@ export default function ProjectList() {
 		<Box>
 			<Section>
 				<Container maxW='4xl'>
-					<Box mt='2rem'>
+					<Box>
 						<Stack spacing='5'>
 							<Text textAlign='center' fontWeight='bold' fontSize={48}>
 								Projects
 							</Text>
 							<Box
 								borderRadius={5}
-								// py='5px'
 								w='75%'
 								alignSelf='center'
 								boxShadow='rgba(100, 100, 111, 0.2) 0px 7px 29px 0px'

@@ -53,26 +53,32 @@ export default function DetailProject({
 		speed: 500,
 		slidesToShow: 3,
 		slidesToScroll: 1,
+		responsive: [
+			{
+				breakpoint: 1024,
+				settings: {
+					slidesToShow: 3,
+					slidesToScroll: 1,
+					infinite: true,
+					dots: true,
+				},
+			},
+			{
+				breakpoint: 600,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 1,
+				},
+			},
+			{
+				breakpoint: 480,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1,
+				},
+			},
+		],
 	};
-
-	// useEffect(() => {
-	// 	getDetailProjectbyKey('website', '-MYwpIVRhFmhSSw2kA89')
-	// 		.then((res: any) => {
-	// 			console.log('res', res);
-	// 			setData(res);
-	// 			getImages(res.platform, res.bucket)
-	// 				.then((resImg: any) => {
-	// 					console.log('resImg', resImg);
-	// 					setImages(resImg);
-	// 				})
-	// 				.catch((errImg) => {
-	// 					console.log('errImg', errImg);
-	// 				});
-	// 		})
-	// 		.catch((err) => {
-	// 			console.log('err', err);
-	// 		});
-	// }, []);
 
 	return (
 		<Box bg='white'>
@@ -84,7 +90,7 @@ export default function DetailProject({
 							justifyContent='space-between'
 							alignItems='center'
 						>
-							<Text fontWeight='bold' fontSize={48}>
+							<Text fontWeight='bold' fontSize={[24, 36, 48]}>
 								{data?.name}
 							</Text>
 							<Button variant='outline' onClick={() => router.back()}>
@@ -139,13 +145,7 @@ export default function DetailProject({
 										justifyContent='center'
 										alignItems='center'
 									>
-										<Image
-											src={o}
-											w='100%'
-											h='100%'
-											alt={data?.name}
-											borderRadius={10}
-										/>
+										<Image src={o} alt={data?.name} borderRadius={10} />
 									</Box>
 								))}
 							</Slider>

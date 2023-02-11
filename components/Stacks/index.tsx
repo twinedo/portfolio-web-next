@@ -7,6 +7,7 @@ import {
 	Text,
 } from '@chakra-ui/react';
 import Section from 'components/Section';
+import Slider from 'react-slick';
 
 const animation = keyframes`
 	from {
@@ -67,6 +68,43 @@ export default function Stacks() {
 			path: '/img/9. Kotlin.png',
 		},
 	];
+
+	const settings = {
+		dots: true,
+		infinite: arrImages.length > 3,
+		arrows: false,
+		autoplay: true,
+		speed: 500,
+		slidesToShow: 6,
+		slidesToScroll: 1,
+		responsive: [
+			{
+				breakpoint: 1024,
+				settings: {
+					slidesToShow: 6,
+					slidesToScroll: 1,
+					infinite: true,
+					dots: true,
+				},
+			},
+			{
+				breakpoint: 600,
+				settings: {
+					slidesToShow: 5,
+					slidesToScroll: 5,
+					initialSlide: 1,
+				},
+			},
+			{
+				breakpoint: 480,
+				settings: {
+					slidesToShow: 3,
+					slidesToScroll: 1,
+				},
+			},
+		],
+	};
+
 	return (
 		<Box bg='grey'>
 			<Section>
@@ -83,33 +121,22 @@ export default function Stacks() {
 							</Text>
 							<Box h='3px' w='45px' bg='white' />
 						</Stack>
-						<Stack direction='row' maxWidth='4xl'>
-							<Stack
-								direction='row'
-								columnGap={10}
-								animation={myAnimation}
-								// overflow='hidden'
-								w='100%'
-							>
-								{arrImages.map(
-									(
-										o: { id: number; name: string; path: string },
-										i: number
-									) => (
-										<Box key={o.id} cursor='pointer'>
-											<Image
-												src={o.path}
-												boxSize='80px'
-												alt={o.name}
-												// style={{ filter: 'grayscale(100%)' }}
-												filter='grayscale(100%)'
-												_hover={{ filter: 'grayscale(0%)' }}
-											/>
-										</Box>
-									)
-								)}
-							</Stack>
-						</Stack>
+						<Slider {...settings}>
+							{arrImages.map(
+								(o: { id: number; name: string; path: string }, i: number) => (
+									<Box key={o.id} cursor='pointer' mx='5px'>
+										<Image
+											src={o.path}
+											width={[50, 70, 100]}
+											// boxSize={['30px', '80px']}
+											alt={o.name}
+											filter='grayscale(100%)'
+											_hover={{ filter: 'grayscale(0%)' }}
+										/>
+									</Box>
+								)
+							)}
+						</Slider>
 					</Stack>
 				</Container>
 			</Section>
