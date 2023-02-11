@@ -12,11 +12,10 @@ export const LoginHandler = (data: { username: string; password: string }) => {
 			)
 			.then((userCredential) => {
 				var user = userCredential;
-				console.log('user: ', user);
 				resolve(user.user);
 			})
 			.catch((err) => {
-				console.log(err);
+				alert(JSON.stringify(err));
 				reject(err);
 			});
 	});
@@ -33,7 +32,6 @@ export const getDataFromAPI = (platform: string) => {
 	return new Promise((resolve, reject) => {
 		onValue(ref(db, platform + '/'), (snapshot) => {
 			const data = snapshot.val();
-			console.log('dataget', data);
 			const newArr: any = [];
 			Object.keys(data).map((key) => {
 				return newArr.push({
@@ -94,10 +92,8 @@ export const downloadHandler = async () => {
 
 	try {
 		let result = await getDownloadURL(storageRef);
-		console.log('res down', result);
 		return Promise.resolve(result);
 	} catch (error: any) {
-		console.log('err down', error);
 		switch (error.code) {
 			case 'storage/object-not-found':
 				// File doesn't exist

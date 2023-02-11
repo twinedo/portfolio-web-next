@@ -5,16 +5,12 @@ import {
 	Divider,
 	Flex,
 	Image,
-	SimpleGrid,
 	Stack,
 	Text,
 } from '@chakra-ui/react';
 import Section from 'components/Section';
 import { useRouter } from 'next/router';
 import { BiChevronLeft } from 'react-icons/bi';
-import { useEffect, useState } from 'react';
-import { getDetailProjectbyKey, getImages } from 'services/handler/handlerAPI';
-import { GetServerSidePropsContext } from 'next';
 import { IProject } from 'models/project_model';
 import Slider from 'react-slick';
 import { AiFillApple } from 'react-icons/ai';
@@ -30,11 +26,6 @@ export default function DetailProject({
 	imageData: Array<string>;
 }) {
 	const router = useRouter();
-	console.log('dataaa', data);
-	console.log('imageDatacuk', imageData);
-	// console.log('router', router);
-	// const [data, setData] = useState<IProject>();
-	// const [images, setImages] = useState([]);
 	const imageSettings = {
 		dots: true,
 		infinite: imageData?.length > 3,
@@ -119,12 +110,7 @@ export default function DetailProject({
 						{data?.platform === 'website' && (
 							<Slider {...imageSettings}>
 								{imageData.map((o, i) => (
-									<Box
-										key={i}
-										p='30px'
-										justifyContent='center'
-										alignItems='center'
-									>
+									<Box key={i} justifyContent='center' alignItems='center'>
 										<Image
 											src={o}
 											w='100%'

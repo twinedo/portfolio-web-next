@@ -1,13 +1,4 @@
-import {
-	Box,
-	Button,
-	Container,
-	Divider,
-	Flex,
-	Stack,
-	Text,
-} from '@chakra-ui/react';
-import { IPost } from 'models/post_model';
+import { Box, Container, Divider, Flex, Stack, Text } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import Slider from 'react-slick';
 import Section from 'components/Section';
@@ -16,7 +7,6 @@ import { BiChevronRight } from 'react-icons/bi';
 import lodash from 'lodash';
 import { getDataFromAPI } from 'services/handler/handlerAPI';
 import { IProject } from 'models/project_model';
-import Image from 'next/image';
 import { AiOutlineMobile } from 'react-icons/ai';
 import { TbWorld } from 'react-icons/tb';
 
@@ -28,9 +18,7 @@ export default function HomeProjects() {
 		setLoading(true);
 
 		getDataFromAPI('mobile').then((res: any) => {
-			console.log('ressss datacoy', res);
 			const sortYear = lodash.orderBy(res, 'year', 'desc');
-			console.log('sortYear', sortYear);
 			const slice5 = sortYear.slice(0, 4);
 
 			setDataListMobile(slice5);
@@ -39,7 +27,6 @@ export default function HomeProjects() {
 			setLoading(false);
 		}, 2000);
 		return () => {
-			console.log('');
 			setLoading(false);
 		};
 	}, []);
@@ -136,11 +123,7 @@ export default function HomeProjects() {
 											<Box width='100%' height='100px'>
 												<img
 													src={o.display}
-													// width='100%'
-													// height='100%'
 													alt='image'
-													// fill
-													// objectFit='contain'
 													style={{
 														objectFit: 'cover',
 														objectPosition: 'center',
@@ -150,7 +133,6 @@ export default function HomeProjects() {
 														borderTopRightRadius: 8,
 														borderTopLeftRadius: 8,
 													}}
-													// fill
 												/>
 											</Box>
 											<Box pt='5px' pb='10px' px='10px'>

@@ -31,28 +31,16 @@ export default function ProjectList() {
 		setLoading(true);
 
 		getDataFromAPI(selectedTab).then((res: any) => {
-			console.log('ressss datacoy', res);
 			const sortYear = lodash.orderBy(res, 'year', 'desc');
-			console.log('sortYear', sortYear);
-
 			setDataList(sortYear);
-			// setFilteredListMobile(sortYear);
 		});
 		setTimeout(() => {
 			setLoading(false);
 		}, 2000);
 		return () => {
-			console.log('');
 			setLoading(false);
 		};
 	}, [selectedTab]);
-
-	function _onDetail(platform: string, key: string) {
-		router.push({
-			pathname: 'projects/' + key,
-			query: platform,
-		});
-	}
 
 	return (
 		// <Box bgGradient='linear(to-br,rgba(1, 65, 255, 0),rgba(1, 65, 255, 0),rgba(1, 65, 255, 0.3))'>
@@ -155,11 +143,7 @@ export default function ProjectList() {
 												<Box width='100%' height='100px'>
 													<img
 														src={o.display}
-														// width='100%'
-														// height='100%'
 														alt='image'
-														// fill
-														// objectFit='contain'
 														style={{
 															objectFit: 'cover',
 															objectPosition: 'center',
@@ -223,7 +207,6 @@ export default function ProjectList() {
 																	fontSize={12}
 																	textAlign='center'
 																	_hover={{ bg: 'white', color: 'black' }}
-																	// onClick={() => _onDetail(o.platform, o.key)}
 																>
 																	Detail
 																</Text>

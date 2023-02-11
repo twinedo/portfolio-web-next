@@ -22,7 +22,6 @@ import { FiMenu } from 'react-icons/fi';
 export default function Header() {
 	const router = useRouter();
 	const path = router.pathname;
-	console.log('router', router);
 	const { isOpen, onOpen, onClose } = useDisclosure();
 	const btnRef = useRef();
 	const redirects = [
@@ -42,12 +41,6 @@ export default function Header() {
 			url: '/cv',
 		},
 	];
-
-	function _RemoveFirstTxt(txt: string) {
-		const result = txt.slice(1);
-		console.log('resul', result);
-		return result;
-	}
 
 	return (
 		<Box

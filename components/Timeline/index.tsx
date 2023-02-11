@@ -1,11 +1,4 @@
-import {
-	Box,
-	ChakraComponent,
-	ChakraProps,
-	Flex,
-	Stack,
-	Text,
-} from '@chakra-ui/react';
+import { Box, ChakraProps, Flex, Stack, Text } from '@chakra-ui/react';
 import React, { ReactNode } from 'react';
 
 interface IProps {

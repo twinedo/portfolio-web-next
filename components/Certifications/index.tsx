@@ -1,4 +1,4 @@
-import { Box, Container, Flex, Stack, Text } from '@chakra-ui/react';
+import { Box, Container, Stack, Text } from '@chakra-ui/react';
 import Section from 'components/Section';
 import Timeline from 'components/Timeline';
 import { generateRandomLightColor } from 'services/utils/fun';

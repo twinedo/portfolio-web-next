@@ -39,7 +39,6 @@ export default function Socmed() {
 				>
 					<IoLogoGithub size={24} />
 				</Link>
-				{/* <Text>Instagram</Text> */}
 			</Stack>
 		</Box>
 	);

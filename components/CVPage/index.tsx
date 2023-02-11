@@ -14,7 +14,7 @@ export default function CVPage() {
 			.then((res) => {
 				window.open(res);
 			})
-			.catch((error) => console.log('err dl', error));
+			.catch((error) => alert(JSON.stringify(error)));
 	};
 
 	return (

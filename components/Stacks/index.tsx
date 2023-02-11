@@ -1,25 +1,8 @@
-import {
-	Box,
-	Container,
-	Image,
-	keyframes,
-	Stack,
-	Text,
-} from '@chakra-ui/react';
+import { Box, Container, Image, Stack, Text } from '@chakra-ui/react';
 import Section from 'components/Section';
 import Slider from 'react-slick';
 
-const animation = keyframes`
-	from {
-		transform: translateX(100%);
-	}
-	to {
-		transform: translateX(-100%);
-	}
-`;
-
 export default function Stacks() {
-	const myAnimation = `${animation} infinite 90s linear`;
 	const arrImages = [
 		{
 			id: 1,
