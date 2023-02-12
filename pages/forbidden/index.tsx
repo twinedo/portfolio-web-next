@@ -26,12 +26,7 @@ export default function Forbidden() {
 
 	if (isLoading) {
 		return (
-			<Flex
-				minH={'100vh'}
-				align={'center'}
-				justify={'center'}
-				bg={useColorModeValue('gray.50', 'gray.800')}
-			>
+			<Flex minH={'100vh'} align={'center'} justify={'center'} bg={'gray.50'}>
 				<Spinner size='xl' />
 			</Flex>
 		);
