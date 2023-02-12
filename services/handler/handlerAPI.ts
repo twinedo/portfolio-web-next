@@ -1,5 +1,7 @@
+import { onAuthStateChanged } from 'firebase/auth';
 import { child, get, onValue, push, ref } from 'firebase/database';
 import { getDownloadURL, listAll, ref as storageReff } from 'firebase/storage';
+import { IProject } from 'models/project_model';
 import app, { auth, signIn, database, storage } from '../firebase';
 
 export const LoginHandler = (data: { username: string; password: string }) => {
@@ -21,10 +23,50 @@ export const LoginHandler = (data: { username: string; password: string }) => {
 	});
 };
 
-export const addDataToAPI = (data: any) => {
+export const LogoutHandler = () => {
+	return new Promise((resolve, reject) => {
+		auth
+			.getAuth()
+			.signOut()
+			.then((res) => {
+				resolve(res);
+			})
+			.catch((err) => {
+				alert(JSON.stringify(err));
+				reject(err);
+			});
+	});
+};
+
+export const addDataToAPI = (data: IProject) => {
 	const db = database.getDatabase(app);
-	push(ref(db, data.platform === 'mobile' ? 'mobile/' : 'website/'), data);
+	return new Promise((resolve, reject) => {
+		push(ref(db, data.platform === 'mobile' ? 'mobile/' : 'website/'), data)
+			.then((res) => {
+				resolve(res);
+			})
+			.catch((err) => {
+				reject(err);
+			});
+	});
 	// ref(database.getDatabase(), data.platform === 'mobile' ? 'mobile/' : 'website/').push(data);
+};
+
+export const CheckAuth = () => {
+	return new Promise((resolve, reject) => {
+		onAuthStateChanged(auth.getAuth(), (user) => {
+			if (user) {
+				// User is signed in, see docs for a list of available properties
+				// https://firebase.google.com/docs/reference/js/firebase.User
+				resolve(true);
+				// ...
+			} else {
+				// User is signed out
+				// ...
+				reject(false);
+			}
+		});
+	});
 };
 
 export const getDataFromAPI = (platform: string) => {

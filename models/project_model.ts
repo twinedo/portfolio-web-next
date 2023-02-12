@@ -3,12 +3,12 @@ export interface IProject {
 	description: string;
 	display: string;
 	id: string;
-	key: string;
+	key?: string;
 	link_appstore: string;
 	link_playstore: string;
 	link_website: string;
 	name: string | 'mobile' | 'website';
 	platform: string;
 	tag: string;
-	year: number;
+	year: string;
 }
