@@ -130,7 +130,10 @@ export const getImages = async (platform: string, bucket: string) => {
 
 export const downloadHandler = async () => {
 	const storages = storage.getStorage(app);
-	const storageRef = storageReff(storages, '/doc/TWIN EDO NUGRAHA.pdf');
+	const storageRef = storageReff(
+		storages,
+		'/doc/CV - TWIN EDO NUGRAHA - d.pdf'
+	);
 
 	try {
 		let result = await getDownloadURL(storageRef);
