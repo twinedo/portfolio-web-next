@@ -24,8 +24,7 @@ export default function CVPage() {
 					<Flex
 						flexDirection={['column', 'row']}
 						justifyContent='space-between'
-						alignItems={['flex-start', 'center']}
-					>
+						alignItems={['flex-start', 'center']}>
 						<Text fontWeight='bold' fontSize={[24, 36, 48]}>
 							Curriculum Vitae
 						</Text>
@@ -45,69 +44,52 @@ export default function CVPage() {
 						</Stack>
 						<Stack position='relative'>
 							<Timeline
-								dateText='Jan 2022 - Current'
-								bgCard={generateRandomLightColor()}
-							>
-								<Text fontWeight='bold'>DigitSense Ltd - Mobile Developer</Text>
+								dateText='Jan 2022 - May 2023'
+								bgCard={generateRandomLightColor()}>
+								<Text fontWeight='bold'>DIGITSENSE LTD - Mobile Developer</Text>
 								<Text>
-									- Build web app Cointelegraph
-									<br /> - Build web app Neuropix
-									<br /> - Build mobile app Myrlabs
+									- Build Myrlabs app to guide user as travel navigation
+									<br />- Not only build, i analyze the requirement from client,
+									give and take an advice to build an app, improvement
+									<br />- Help Colleague to complete small task in web
+									application
 								</Text>
 							</Timeline>
 							<Timeline
-								dateText='Mar 2021 - Des 2021'
-								bgCard={generateRandomLightColor()}
-							>
+								dateText='Mar 2020 - Des 2021'
+								bgCard={generateRandomLightColor()}>
 								<Text fontWeight='bold'>
-									PT Trucking Lintas Sarana - Mobile Developer
+									PT TRUCKKING LINTAS SARANA - Mobile Developer
 								</Text>
 								<Text>
 									- Build TruckkingDriver app to track and monitoring status
-									update when driver delivering the package (version 2).
-									<br />- Build Vendor Management System web based.
+									update when driver delivering the package (version 1 & version
+									2).
 									<br />- Pair Programmer to build Truckking web based
-									application.
-									<br />- Helping Operation how to operate application,
-									collecting bug report from user, fix bug.
-								</Text>
-							</Timeline>
-							<Timeline
-								dateText='Mar 2020 – Feb 2021'
-								bgCard={generateRandomLightColor()}
-							>
-								<Text fontWeight='bold'>
-									PT Dejavu Express - Mobile Developer
-								</Text>
-								<Text>
-									- Build TruckkingDriver app to track and monitoring status
-									update when driver delivering the package (version 1).
-									<br />- Pair Programmer to build Truckking web based
-									application.
-									<br />- Helping Operation how to operate application,
-									collecting bug report from user, fix bug.
+									application and Vendor Management System web based.
+									<br />- Socialize The Truck Driver and Operation how to use
+									app, what’s do and don’t, receive any bugs/error, then fixing
 								</Text>
 							</Timeline>
 							<Timeline
 								dateText='Jun 2019 – Feb 2020'
-								bgCard={generateRandomLightColor()}
-							>
-								<Text fontWeight='bold'>
-									Universitas Pertamina - Programmer
-								</Text>
+								bgCard={generateRandomLightColor()}>
+								<Text fontWeight='bold'>PERTAMINA UNIVERSITY - Programmer</Text>
 								<Text>
 									- Build MONAS (Monitoring Asset) application, android based.
-									<br />- Build Employee Presence application with Face
+									<br />- Build Employee Attendance Application with Face
 									Recognition feature.
+									<br />- Not only build, i socialize the use of application to
+									the office boy (for MONAS)
+									<br />- Receive any complaint, bugs. error and fixing
 								</Text>
 							</Timeline>
 
 							<Timeline
 								dateText='Jan 2018 – Dec 2018'
-								bgCard={generateRandomLightColor()}
-							>
+								bgCard={generateRandomLightColor()}>
 								<Text fontWeight='bold'>
-									PT JASARAHARJA PUTERA - Administration Staff
+									PT JASARAHARJA PUTERA - Administration & IT Support
 								</Text>
 								<Text>
 									- Input/Process/Provide client registered data
