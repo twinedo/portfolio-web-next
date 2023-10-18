@@ -51,39 +51,35 @@ export default function Header() {
 			left='0'
 			zIndex={11}
 			width='100%'
-			boxShadow='rgba(100, 100, 111, 0.2) 0px 7px 29px 0px'
-		>
+			boxShadow='rgba(100, 100, 111, 0.2) 0px 7px 29px 0px'>
 			<Container maxWidth='4xl' marginLeft='auto' marginRight='auto'>
 				<Flex
 					flexDirection='row'
 					justifyContent='space-between'
 					align='center'
-					py='10px'
-				>
+					py='10px'>
 					<Link href='/'>
 						<Stack
 							direction='row'
 							spacing={15}
 							alignItems='center'
-							cursor='pointer'
-						>
+							cursor='pointer'>
 							<Avatar
 								width='50px'
 								borderRadius='50%'
-								name='Dan Abrahmov'
+								name='Twin Edo'
 								src='/img/profile.jpg'
 							/>
 
 							<Text fontWeight='bold' fontSize={20}>
-								twinedo.dev
+								twinedo
 							</Text>
 						</Stack>
 					</Link>
 					<Stack
 						direction='row'
 						spacing={10}
-						display={['none', 'none', 'flex']}
-					>
+						display={['none', 'none', 'flex']}>
 						{redirects.map(
 							(o: { id: string; text: string; url: string }, i: number) => (
 								<Link href={o.url} key={o.id}>
@@ -98,8 +94,7 @@ export default function Header() {
 												: path === o.url
 												? 1
 												: 0.5
-										}
-									>
+										}>
 										{o.text}
 									</Text>
 								</Link>
@@ -110,16 +105,14 @@ export default function Header() {
 						cursor='pointer'
 						display={['flex', 'flex', 'none']}
 						ref={btnRef.current}
-						onClick={onOpen}
-					>
+						onClick={onOpen}>
 						<FiMenu color='black' size={30} />
 					</Button>
 					<Drawer
 						isOpen={isOpen}
 						placement='right'
 						onClose={onClose}
-						finalFocusRef={btnRef.current}
-					>
+						finalFocusRef={btnRef.current}>
 						<DrawerOverlay />
 						<DrawerContent>
 							<DrawerCloseButton />
@@ -145,8 +138,7 @@ export default function Header() {
 															? 1
 															: 0.5
 													}
-													onClick={onClose}
-												>
+													onClick={onClose}>
 													{o.text}
 												</Text>
 											</Link>

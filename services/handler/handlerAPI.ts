@@ -132,7 +132,7 @@ export const downloadHandler = async () => {
 	const storages = storage.getStorage(app);
 	const storageRef = storageReff(
 		storages,
-		'/doc/CV - TWIN EDO NUGRAHA - d.pdf'
+		'/doc/CV - TWIN EDO NUGRAHA - d2.pdf'
 	);
 
 	try {
