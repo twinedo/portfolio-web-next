@@ -50,6 +50,11 @@ export default function Stacks() {
 			name: 'Kotlin',
 			path: '/img/9. Kotlin.png',
 		},
+		{
+			id: 10,
+			name: 'Tailwind',
+			path: '/img/11. Tailwind.png',
+		},
 	];
 
 	const settings = {
