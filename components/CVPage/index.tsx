@@ -54,7 +54,7 @@ export default function CVPage() {
                   and scalability in a manner consistent with modern React
                   Native component design.
                   <br />- Resolve issue , bug, and unmatch features on app
-                  <br />- Planning what's best, what should remove, giving a
+                  <br />- Planning what&apos;s best, what should remove, giving a
                   presentation the progress
                   <br />- Delivered robust, high-quality code for iOS and
                   Android platforms with a focus on performance optimization and
