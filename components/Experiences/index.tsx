@@ -1,11 +1,4 @@
-import {
-  Box,
-  Button,
-  Container,
-  Flex,
-  Stack,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Button, Container, Flex, Stack, Text } from "@chakra-ui/react";
 import Section from "components/Section";
 import Timeline from "components/Timeline";
 import Link from "next/link";
@@ -26,6 +19,23 @@ export default function Experiences() {
             </Stack>
 
             <Stack position="relative">
+              <Timeline
+                dateText="Nov 2024 - May 2025"
+                bgCard={generateRandomLightColor()}
+              >
+                <Text fontWeight="bold">Abersoft - Mobile Developer</Text>
+                <Text>
+                  - Engineered modules in the Venga app, optimizing performance
+                  and scalability in a manner consistent with modern React
+                  Native component design.
+                  <br />- Resolve issue , bug, and unmatch features on app
+                  <br />- Planning what's best, what should remove, giving a
+                  presentation the progress
+                  <br />- Delivered robust, high-quality code for iOS and
+                  Android platforms with a focus on performance optimization and
+                  adherence to mobile best practices.
+                </Text>
+              </Timeline>
               <Timeline
                 dateText="Mar 2024 - Sep 2024"
                 bgCard={generateRandomLightColor()}
@@ -51,14 +61,18 @@ export default function Experiences() {
               >
                 <Text fontWeight="bold">DigitSense Ltd - Mobile Developer</Text>
                 <Text>
-                  - Constructed the Myrlabs app using React Native to ensure cross-platform functionality and responsive design, complementing web
-									development practices in React.
-                  <br />- Conducted thorough client requirement analyses and provided actionable recommendations, aligning with Agile methodologies for
-									iterative development.
-                  <br />- Supported team efforts in developing web applications by applying mobile development insights to enhance UI responsiveness and
-									user experience.
-									<br />- Performed comprehensive testing and documentation to ensure application reliability, incorporating unit testing practices with tools
-									like Jest and Vitest.
+                  - Constructed the Myrlabs app using React Native to ensure
+                  cross-platform functionality and responsive design,
+                  complementing web development practices in React.
+                  <br />- Conducted thorough client requirement analyses and
+                  provided actionable recommendations, aligning with Agile
+                  methodologies for iterative development.
+                  <br />- Supported team efforts in developing web applications
+                  by applying mobile development insights to enhance UI
+                  responsiveness and user experience.
+                  <br />- Performed comprehensive testing and documentation to
+                  ensure application reliability, incorporating unit testing
+                  practices with tools like Jest and Vitest.
                 </Text>
               </Timeline>
 

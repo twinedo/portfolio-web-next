@@ -45,18 +45,39 @@ export default function CVPage() {
             </Stack>
             <Stack position="relative">
               <Timeline
+                dateText="Nov 2024 - May 2025"
+                bgCard={generateRandomLightColor()}
+              >
+                <Text fontWeight="bold">Abersoft - Mobile Developer</Text>
+                <Text>
+                  - Engineered modules in the Venga app, optimizing performance
+                  and scalability in a manner consistent with modern React
+                  Native component design.
+                  <br />- Resolve issue , bug, and unmatch features on app
+                  <br />- Planning what's best, what should remove, giving a
+                  presentation the progress
+                  <br />- Delivered robust, high-quality code for iOS and
+                  Android platforms with a focus on performance optimization and
+                  adherence to mobile best practices.
+                </Text>
+              </Timeline>
+              <Timeline
                 dateText="Mar 2024 - Sep 2024"
                 bgCard={generateRandomLightColor()}
               >
                 <Text fontWeight="bold">INSPIRO - Mobile Developer</Text>
                 <Text>
-                  - Engineered modules in the Pruforce Pulse app using Agile methodologies, optimizing performance and scalability in a manner
-									consistent with modern React component design.
-                  <br />- Diagnosed and resolved issues in both existing and new modules while maintaining accurate version control with Git.
-                  <br />- Collaborated with vendors to extend functionality using React Native, demonstrating skills transferable to React applications in
-									full-stack development.
-									<br />- Delivered robust, high-quality code for iOS and Android platforms with a focus on performance optimization and adherence to mobile
-									best practices.
+                  - Engineered modules in the Pruforce Pulse app using Agile
+                  methodologies, optimizing performance and scalability in a
+                  manner consistent with modern React component design.
+                  <br />- Diagnosed and resolved issues in both existing and new
+                  modules while maintaining accurate version control with Git.
+                  <br />- Collaborated with vendors to extend functionality
+                  using React Native, demonstrating skills transferable to React
+                  applications in full-stack development.
+                  <br />- Delivered robust, high-quality code for iOS and
+                  Android platforms with a focus on performance optimization and
+                  adherence to mobile best practices.
                 </Text>
               </Timeline>
               <Timeline
@@ -65,14 +86,18 @@ export default function CVPage() {
               >
                 <Text fontWeight="bold">DIGITSENSE LTD - Mobile Developer</Text>
                 <Text>
-                  - Constructed the Myrlabs app using React Native to ensure cross-platform functionality and responsive design, complementing web
-									development practices in React.
-                  <br />- Conducted thorough client requirement analyses and provided actionable recommendations, aligning with Agile methodologies for
-									iterative development.
-                  <br />- Supported team efforts in developing web applications by applying mobile development insights to enhance UI responsiveness and
-									user experience.
-									<br />- Performed comprehensive testing and documentation to ensure application reliability, incorporating unit testing practices with tools
-									like Jest and Vitest.
+                  - Constructed the Myrlabs app using React Native to ensure
+                  cross-platform functionality and responsive design,
+                  complementing web development practices in React.
+                  <br />- Conducted thorough client requirement analyses and
+                  provided actionable recommendations, aligning with Agile
+                  methodologies for iterative development.
+                  <br />- Supported team efforts in developing web applications
+                  by applying mobile development insights to enhance UI
+                  responsiveness and user experience.
+                  <br />- Performed comprehensive testing and documentation to
+                  ensure application reliability, incorporating unit testing
+                  practices with tools like Jest and Vitest.
                 </Text>
               </Timeline>
               <Timeline
