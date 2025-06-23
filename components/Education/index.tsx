@@ -25,7 +25,7 @@ export default function Education() {
 							</Text>
 							<Text>Bachelor`s degree graduate</Text>
 						</Timeline>
-						<Timeline
+						{/* <Timeline
 							dateText='2010 - 2013'
 							bgCard={generateRandomLightColor()}
 						>
@@ -45,7 +45,7 @@ export default function Education() {
 						>
 							<Text fontWeight='bold'>SDN Pekayon 03 Pagi</Text>
 							<Text>Elementary School</Text>
-						</Timeline>
+						</Timeline> */}
 					</Stack>
 				</Container>
 			</Section>
